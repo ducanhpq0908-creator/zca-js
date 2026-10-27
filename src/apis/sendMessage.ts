@@ -407,7 +407,7 @@ export const sendMessageFactory = apiFactory()((api, ctx, utils) => {
         const isFilePath = typeof firstSource == "string";
 
         const firstExtFile = getFileExtension(isFilePath ? firstSource : firstSource.filename);
-        const isSingleFile = attachments.length == 1;
+        const isSingleFile = (attachments as any).length == 1;
         const isGroupMessage = type == ThreadType.Group;
 
         const canBeDesc = isSingleFile && ["jpg", "jpeg", "png", "webp"].includes(firstExtFile);
@@ -626,10 +626,10 @@ export const sendMessageFactory = apiFactory()((api, ctx, utils) => {
             attachments = [attachments];
         }
 
-        if (!msg && (!attachments || (attachments && attachments.length == 0)))
+        if (!msg && (!attachments || (attachments && (attachments as any).length == 0)))
             throw new ZaloApiError("Missing message content");
 
-        if (attachments && isExceedMaxFile(attachments.length))
+        if (attachments && isExceedMaxFile((attachments as any).length))
             throw new ZaloApiError("Exceed maximum file of " + sharefile.max_file);
 
         const responses: {
@@ -640,11 +640,11 @@ export const sendMessageFactory = apiFactory()((api, ctx, utils) => {
             attachment: [],
         };
 
-        if (attachments && attachments.length > 0) {
+        if (attachments && (attachments as any).length > 0) {
             const firstExtFile = getFileExtension(
                 typeof attachments[0] == "string" ? attachments[0] : attachments[0].filename,
             );
-            const isSingleFile = attachments.length == 1;
+            const isSingleFile = (attachments as any).length == 1;
 
             const canBeDesc = isSingleFile && ["jpg", "jpeg", "png", "webp"].includes(firstExtFile);
             if ((!canBeDesc && msg.length > 0) || (msg.length > 0 && quote)) {

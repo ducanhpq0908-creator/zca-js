@@ -1,5 +1,5 @@
-/// <reference types="node" resolution-mode="require"/>
-/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" />
+/// <reference types="node" />
 import cryptojs from "crypto-js";
 import { type ContextSession, type ContextBase } from "./context.js";
 import { FriendEventType } from "./models/FriendEvent.js";
@@ -43,11 +43,8 @@ export declare class ParamsEncryptor {
         zcid: string;
         zcid_ext: string;
         enc_ver: string;
-    } | null;
+    };
     static processStr(e: string): {
-        even: null;
-        odd: null;
-    } | {
         even: string[];
         odd: string[];
     };
@@ -56,7 +53,7 @@ export declare class ParamsEncryptor {
 }
 export declare function decryptResp(key: string, data: string): Record<string, unknown> | null | string;
 export declare function decodeBase64ToBuffer(data: string): Buffer;
-export declare function decodeUnit8Array(data: Uint8Array): string | null;
+export declare function decodeUnit8Array(data: Uint8Array): string;
 export declare function encodeAES(secretKey: string, data: cryptojs.lib.WordArray | string, t?: number): string | null;
 export declare function decodeAES(secretKey: string, data: string, t?: number): string | null;
 export declare function getDefaultHeaders(ctx: ContextBase, origin?: string): Promise<{
@@ -165,5 +162,5 @@ export declare function hexToNegativeColor(hex: string): number;
  * const hexColor = negativeColorToHex(-16711936); // Result: '#00FF00'
  */
 export declare function negativeColorToHex(negativeColor: number): string;
-export declare function normalizeHolderName(input?: string): string | undefined;
+export declare function normalizeHolderName(input?: string): string;
 export {};

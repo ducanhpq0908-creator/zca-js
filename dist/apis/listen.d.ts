@@ -1,4 +1,4 @@
-/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" />
 import EventEmitter from "events";
 import { type FriendEvent } from "../models/FriendEvent.js";
 import { type GroupEvent } from "../models/GroupEvent.js";

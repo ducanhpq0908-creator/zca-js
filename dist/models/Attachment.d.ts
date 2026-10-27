@@ -1,5 +1,5 @@
-/// <reference types="node" resolution-mode="require"/>
-/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" />
+/// <reference types="node" />
 export type AttachmentSource = string | {
     data: Buffer;
     filename: `${string}.${string}`;

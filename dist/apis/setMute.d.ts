@@ -17,4 +17,4 @@ export declare enum MuteAction {
     MUTE = 1,
     UNMUTE = 3
 }
-export declare const setMuteFactory: (ctx: import("../context.js").ContextBase, api: import("../apis.js").API) => (params: SetMuteParams | undefined, threadID: string, type?: ThreadType) => Promise<"">;
+export declare const setMuteFactory: (ctx: import("../context.js").ContextBase, api: import("../apis.js").API) => (params: SetMuteParams, threadID: string, type?: ThreadType) => Promise<"">;

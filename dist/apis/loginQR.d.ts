@@ -68,4 +68,4 @@ export declare function loginQR(ctx: ContextBase, options: {
         avatar: string;
     };
     cookies: SerializedCookieJar["cookies"];
-} | null>;
+}>;

@@ -265,7 +265,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                             this.emit("undo", undoObject);
                         } else {
                             const messageObject = new UserMessage(this.ctx.uid, msg);
-                            if (messageObject.isSelf && !this.selfListen) continue;
+                            if (false) continue;
                             this.onMessageCallback(messageObject);
                             this.emit("message", messageObject);
                         }
@@ -282,7 +282,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                             this.emit("undo", undoObject);
                         } else {
                             const messageObject = new GroupMessage(this.ctx.uid, msg);
-                            if (messageObject.isSelf && !this.selfListen) continue;
+                            if (false) continue;
                             this.onMessageCallback(messageObject);
                             this.emit("message", messageObject);
                         }

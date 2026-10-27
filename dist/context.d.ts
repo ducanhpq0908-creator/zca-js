@@ -1,4 +1,4 @@
-/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" />
 import type { Agent } from "http";
 import type { CookieJar } from "tough-cookie";
 type UploadEventData = {
